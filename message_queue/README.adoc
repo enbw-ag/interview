@@ -31,33 +31,3 @@ Consider that there might be other implementations of the concept `MessageQueue`
 Make sure that the `MessageQueue` class can be easily replaced by another implementation
 without modifying the code that uses it.
 
-== Testing
-
-The following test code should pass:
-
-[source,python]
-----
-from datetime import datetime
-
-def test_start_transaction_message():
-    msg = StartTransaction(1, "User1", 0.0, str(datetime.now()))
-    assert msg.connector_id == 1
-    assert msg.id_tag == "User1"
-    assert msg.meter_start == 0.0
-
-def test_stop_transaction_message():
-    msg = StopTransaction(1, 123, 10.0, str(datetime.now()))
-    assert msg.connector_id == 1
-    assert msg.transaction_id == 123
-    assert msg.meter_stop == 10.0
-
-def test_message_queue():
-    queue = MessageQueue()
-    msg1 = StartTransaction(1, "User1", 0.0, str(datetime.now()))
-    msg2 = StopTransaction(1, 123, 10.0, str(datetime.now()))
-    queue.add_message(msg1)
-    queue.add_message(msg2)
-    assert queue.get_message() == msg1
-    assert queue.get_message() == msg2
-    assert queue.get_message() is None
-----
