@@ -1,0 +1,26 @@
+= DevOps Exercise
+
+Checking the following skills:
+
+* Scripting
+* Linux
+* Raspberry Pi
+* Git
+
+Create a minimal service for the monitoring of operational system parameters:
+
+* CPU temperature
+* CPU usage
+* RAM usage
+* disk usage 
+
+(choose two)
+
+The service should continuously write into a machine-readable CSV file in a fixed file system location.
+
+The service should run automatically at boot.
+
+The service configuration and its deployment on a fresh system should be automated.
+All files and scripts needed for this purpose should be checked into the Git repository.
+
+
