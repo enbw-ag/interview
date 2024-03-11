@@ -1,0 +1,63 @@
+= Coding Exercise - Message Queue
+
+A charge point needs to notify a backend system when a charging session starts and ends. 
+
+A `StartTransaction`-Message contains the following attributes:
+
+* `connector_id`: an integer that stores the id of the connector that is used for the charging session. Value must be greater than 0.
+* `id_tag`: a string that stores the id of the user that starts the charging session.
+* `meter_start`: a float that stores the meter value at the start of the charging session.
+* `timestamp`: a string that stores the time at which the charging session starts.
+
+A `StopTransaction`-Message contains the following attributes:
+
+* `connector_id`: an integer that stores the id of the connector that is used for the charging session.
+* `transaction_id`: an integer that stores the id of the transaction that is ended.
+* `meter_stop`: a float that stores the meter value at the end of the charging session.
+* `timestamp`: a string that stores the time at which the charging session ends.
+
+Take into account that further messages could be added easily in the future.
+All messages contain a `timestamp`.
+
+Those messages need to be added to a queue. Create a `LoggingMessageQueue` class with the following
+attributes and methods:
+
+* `add_message`: a method that adds a new message to the queue.
+* `get_message`: a method that removes and returns the message at the front of the queue.
+If the queue is empty, it should return `None`.
+
+The `LoggingMessageQueue` logs the message type and its timestamp when a message is added and removed from the queue. Standard print statements are sufficient for this purpose.
+Consider that there might be other implementations of the concept `MessageQueue` in the future.
+Make sure that the `MessageQueue` class can be easily replaced by another implementation
+without modifying the code that uses it.
+
+== Testing
+
+The following test code should pass:
+
+[source,python]
+----
+from datetime import datetime
+
+def test_start_transaction_message():
+    msg = StartTransaction(1, "User1", 0.0, str(datetime.now()))
+    assert msg.connector_id == 1
+    assert msg.id_tag == "User1"
+    assert msg.meter_start == 0.0
+
+def test_stop_transaction_message():
+    msg = StopTransaction(1, 123, 10.0, str(datetime.now()))
+    assert msg.connector_id == 1
+    assert msg.transaction_id == 123
+    assert msg.meter_stop == 10.0
+
+def test_message_queue():
+    queue = MessageQueue()
+    msg1 = StartTransaction(1, "User1", 0.0, str(datetime.now()))
+    msg2 = StopTransaction(1, 123, 10.0, str(datetime.now()))
+    queue.add_message(msg1)
+    queue.add_message(msg2)
+    assert queue.get_message() == msg1
+    assert queue.get_message() == msg2
+    assert queue.get_message() is None
+----
