@@ -5,7 +5,6 @@ Checking the following skills:
 * Scripting
 * Linux
 * Raspberry Pi
-* Git
 
 Create a minimal service for the monitoring of operational system parameters:
 
@@ -18,9 +17,27 @@ Create a minimal service for the monitoring of operational system parameters:
 
 The service should continuously write into a machine-readable CSV file in a fixed file system location.
 
-The service should run automatically at boot.
+The service should run automatically at boot and keep logs written during previous boots.
 
-The service configuration and its deployment on a fresh system should be automated.
-All files and scripts needed for this purpose should be checked into the Git repository.
+The service deployment should be automated. This means one can run e.g.
 
+    ./setup_service
+
+to (re-)install the service on the device.
+All files and scripts needed for this purpose should be stored in this directory.
+
+== Device
+
+Network: `WasGehtLan`
+Hostname: `raspberrypi-interview`
+IP: `192.168.178.127`
+MAC: `B8:27:EB:3C:FB:E5`
+User: `pi`
+Password: `raspberry`
+
+The public key of the `noadmin` user is authorized to login on the `pi` user without password.
+
+You can test the login using
+
+    ssh pi@raspberrypi-interview uname -a
 
