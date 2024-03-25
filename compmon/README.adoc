@@ -29,9 +29,9 @@ All files and scripts needed for this purpose should be available in one directo
 
 == Device (Remote)
 
-Hostname: `ssh.interview.hostedpi.com`
-Port: `5115`
-User: `root`
+* Hostname: `ssh.interview.hostedpi.com`
+* Port: `5115`
+* User: `root`
 
 Send us a public SSH key. It needs to be authorized on the server.
 
@@ -42,12 +42,12 @@ You can test the login using
 
 == Device (Local)
 
-Network: `WasGehtLan`
-Hostname: `raspberrypi-interview`
-IP: `192.168.178.127`
-MAC: `B8:27:EB:3C:FB:E5`
-User: `pi`
-Password: `raspberry`
+* Network: `WasGehtLan`
+* Hostname: `raspberrypi-interview`
+* IP: `192.168.178.127`
+* MAC: `B8:27:EB:3C:FB:E5`
+* User: `pi`
+* Password: `raspberry`
 
 The public key of the `noadmin` user is authorized to login on the `pi` user without password.
 
