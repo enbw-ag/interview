@@ -24,9 +24,23 @@ The service deployment should be automated. This means one can run e.g.
     ./setup_service
 
 to (re-)install the service on the device.
-All files and scripts needed for this purpose should be stored in this directory.
+All files and scripts needed for this purpose should be available in one directory.
 
-== Device
+
+== Device (Remote)
+
+Hostname: `ssh.interview.hostedpi.com`
+Port: `5115`
+User: `root`
+
+Send us a public SSH key. It needs to be authorized on the server.
+
+You can test the login using
+
+    ssh -p 5115 root@ssh.interview.hostedpi.com uname -a
+
+
+== Device (Local)
 
 Network: `WasGehtLan`
 Hostname: `raspberrypi-interview`
