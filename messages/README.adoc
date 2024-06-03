@@ -1,0 +1,27 @@
+= Coding Exercise - Messages (short)
+
+A charge point needs to notify a backend system when a charging session starts and ends. 
+
+A `StartTransaction`-Message contains the following attributes:
+
+* `connector_id`: an integer that stores the id of the connector that is used for the charging session. Value must be greater than 0.
+* `id_tag`: a string that stores the id of the user that starts the charging session.
+* `meter_start`: a float that stores the meter value at the start of the charging session.
+* `timestamp`: a string that stores the time at which the charging session starts.
+
+A `StopTransaction`-Message contains the following attributes:
+
+* `connector_id`: an integer that stores the id of the connector that is used for the charging session.
+* `transaction_id`: an integer that stores the id of the transaction that is ended.
+* `meter_stop`: a float that stores the meter value at the end of the charging session.
+* `timestamp`: a string that stores the time at which the charging session ends.
+
+Take into account that further messages could be added easily in the future.
+All messages contain a `timestamp`.
+
+== Testing
+
+The tests defined in `test/test_messages.py` should pass. They can either be run:
+
+* with pytest: `./run_tests.sh`
+* in debugger: select `testing` in left panel -> select test -> click on `Debug Test`
