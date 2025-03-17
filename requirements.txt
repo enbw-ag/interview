@@ -1,7 +1,9 @@
-numpy==1.26.0
-pandas==2.1.1
-pydantic==2.4.2
-pytz==2023.3.post1
-requests==2.31.0
-scipy==1.11.3
-seaborn==0.13.2
+coverage==7.4.3
+iniconfig==2.0.0
+mypy==1.9.0
+mypy-extensions==1.0.0
+packaging==24.0
+pluggy==1.4.0
+pytest==8.1.1
+pytest-cov==4.1.0
+typing_extensions==4.10.0
