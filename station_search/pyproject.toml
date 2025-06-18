@@ -1,0 +1,13 @@
+[project]
+name = "station-search"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[build-system]
+requires = ["setuptools>=18.0"]
+
+[project.scripts]
+main = "stationsearch.main:main"
