@@ -101,7 +101,8 @@ On your way (including your starting position), you have visited many interestin
 
 This example amounts to **41 distinct positions**
 
-Task: Given a different station map and initial position at `inputs/puzzle_map.txt`, predict the path of your vehicle.
+## Part 1
+Given a different station map and initial position at `inputs/puzzle_map.txt`, predict the path of your vehicle.
 **How many distinct positions will you visit before you leave the map?**
 
 You should use pure Python (including the standard library) without additional dependencies.
@@ -122,3 +123,100 @@ to determine the number of positions of the larger puzzle.
 
 Feel free to modify `main.py` and `test.py` as needed.
 
+## Optional Part 2
+
+You have the chance to install one additional defective charging station and cause an infinite loop.
+
+In the previous example, there are 6 options:
+
+Option one:
+
+```
+....#.....
+....+---+#
+....|...|.
+..#.|...|.
+....|..#|.
+....|...|.
+.#.O^---+.
+........#.
+#.........
+......#...
+```
+
+Option two:
+
+```
+....#.....
+....+---+#
+....|...|.
+..#.|...|.
+..+-+-+#|.
+..|.|.|.|.
+.#+-^-+-+.
+......O.#.
+#.........
+......#...
+```
+
+Option three:
+
+```
+....#.....
+....+---+#
+....|...|.
+..#.|...|.
+..+-+-+#|.
+..|.|.|.|.
+.#+-^-+-+.
+.+----+O#.
+#+----+...
+......#...
+```
+
+Option four:
+
+```
+....#.....
+....+---+#
+....|...|.
+..#.|...|.
+..+-+-+#|.
+..|.|.|.|.
+.#+-^-+-+.
+..|...|.#.
+#O+---+...
+......#...
+```
+
+Option five:
+
+```
+....#.....
+....+---+#
+....|...|.
+..#.|...|.
+..+-+-+#|.
+..|.|.|.|.
+.#+-^-+-+.
+....|.|.#.
+#..O+-+...
+......#...
+```
+Option six:
+
+```
+....#.....
+....+---+#
+....|...|.
+..#.|...|.
+..+-+-+#|.
+..|.|.|.|.
+.#+-^-+-+.
+.+----++#.
+#+----++..
+......#O..
+```
+
+Given a different station map and initial position at `inputs/puzzle_map.txt`, determine
+**how many distinct locations in the map will cause infinite loops?**
