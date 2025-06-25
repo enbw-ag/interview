@@ -67,7 +67,7 @@ Regrettably, the grid connection does not supply enough power for all connected 
 ......#...
 ```
 
-Shockingly, someone cut and took the 11m long charging cable. This process takes you through most of Germany, until reach its south border:
+Shockingly, someone cut and took the 11m long charging cable. This process takes you through most of Germany, until reach its south border (taking another step, you would leave the map area):
 
 ```
 ....#.....
